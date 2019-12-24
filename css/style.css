@@ -8,48 +8,49 @@ html, body {
 	width: 100%;
 	height: 100%;
 }
-.star{
-   position:absolute;
-   height:0px;
-   width:0px;
-   
-   border-right:  100px solid transparent;
-   border-bottom: 70px  solid purple;
-   border-left:   100px solid transparent;
-   
-   transform:    rotate(35deg);
-}
 
-.star:before{
-   position:absolute;
-   top: -45px;
-   left: -65px;
-   content:"";
-   border-bottom: 80px solid purple;
-   border-left: 30px solid transparent;
-   border-right: 30px solid transparent;
-   
-   transform: rotate(-35deg);
-}
 
-.star:after{
-   position:absolute;
-   top: 3px;
-   left: -105px;
-   content:"";
-   border-right: 100px solid transparent;
-   border-bottom: 70px solid purple;
-   border-left: 100px solid transparent;
-   
-   transform: rotate(-70deg);
-}
-.star {
+.circle {
 	position: absolute;
-	animation: mymove 5s infinite alternate;
+	top: 50%;
+	left: 50%;
+    width: 100px;
+    height: 100px;
+    background: green;
+    border-radius: 50%;
+    animation: mymove 5s infinite alternate;
+    
 }
+.circle:hover {
+	width: 300px;
+	height: 300px;
+	opacity: 0.5;
+	animation-duration: 3s;
+}
+
 @keyframes mymove {
-  0%   {top: 200px; left: 300px; border-color: solid pink;}
-  25%  {top: 200px; left: 100px; color: : blue;}
-  50%  {top: 100px; left: 100px; color: yellow;}
-  75%  {top: 100px; left: 400px; color: green;}
-  100% {top: 200px; left: 200px; color: red;}
+  0%   {top: 50%; left: 50%; background: #ff9999;}
+  25%  {top: 30%; left: 60%; background: #b3ff99;}
+  50%  {top: 20%; left: 35%; background: #99ffff;}
+  100% {top: 15%; left: 20%; background: #9999ff;}
+}
+
+.square {
+	position: absolute;
+	top: 30%;
+	left: 65%;
+    width: 100px;
+    height: 100px;
+    background: red;
+    animation: mymove2 7s infinite alternate;
+}
+.square:hover {
+	transform:  translate(-50%,-50%) rotate(45deg) scale(3);
+	transition: all 0.5s ease 0.5s;
+}
+
+@keyframes mymove2 {
+  0%   {top: 30%; left: 90%; background: #40ff00;}
+  25%  {top: 50%; left: 60%; background: #cc3300;}
+  50%  {top: 70%; left: 55%; background: #0000cc;}
+  100% {top: 85%; left: 40%; background: #cc00cc;}
